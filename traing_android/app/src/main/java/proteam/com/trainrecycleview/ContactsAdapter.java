@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -64,6 +65,19 @@ public class ContactsAdapter extends
             super(itemView);
             nameTextView = (TextView) itemView.findViewById(R.id.contact_name);
             messageButton = (ImageView) itemView.findViewById(R.id.message_button);
+//            itemView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//
+//                }
+//            });
+//            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+//                @Override
+//                public boolean onLongClick(View v) {
+//
+//                    return true;
+//                }
+//            });
         }
     }
 }

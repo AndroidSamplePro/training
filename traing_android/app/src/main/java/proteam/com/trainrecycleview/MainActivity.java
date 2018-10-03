@@ -2,7 +2,9 @@ package proteam.com.trainrecycleview;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
@@ -27,12 +29,12 @@ public class MainActivity extends AppCompatActivity {
         // Attach the adapter to the recyclerview to populate items
         rvContacts.setAdapter(adapter);
         // Set layout manager to position the items
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-//        rvContacts.setLayoutManager(linearLayoutManager);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        rvContacts.setLayoutManager(linearLayoutManager);
 
-        GridLayoutManager gridLayoutManager =
-                new GridLayoutManager(this, 2);
-        rvContacts.setLayoutManager(gridLayoutManager);
+//        GridLayoutManager gridLayoutManager =
+//                new GridLayoutManager(this, 2);
+//        rvContacts.setLayoutManager(gridLayoutManager);
 
         // First param is number of columns and second param is orientation i.e Vertical or Horizontal
 //        StaggeredGridLayoutManager gridSpanLayoutManager =
@@ -75,5 +77,7 @@ public class MainActivity extends AppCompatActivity {
 //                adapter.notifyItemRangeInserted(curSize, newItems.size());
             }
         });
+
+        rvContacts.setItemAnimator(new DefaultItemAnimator());
     }
 }
